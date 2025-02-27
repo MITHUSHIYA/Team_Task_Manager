@@ -1,0 +1,32 @@
+.items{
+    display: flex;
+    margin: 2px;
+    align-items: center;
+    gap: 16px;
+    margin: 10px;
+}
+.items_2{
+    margin-bottom: 1px;
+    color: gray;
+}
+
+.items_1{
+    font: bold;
+    font-size: 20px;
+}
+
+button{
+    background-color: gray;
+    width: 100%;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.items:hover{
+    color: black;
+    background: white;
+    border-radius: 5px;
+    transition: all;
+    transition-duration: 300ms;
+    padding: 5px;
+}

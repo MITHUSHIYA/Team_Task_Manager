@@ -1,0 +1,24 @@
+.item_1{
+    background-color: black;
+    width: 15%;
+    border: solid;
+    border-radius: 5px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item_2{
+    background-color: black;
+    width: 85%;
+    border: solid;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.container{
+    display: flex;
+    height: 98vh;
+    gap: 4px;
+}
