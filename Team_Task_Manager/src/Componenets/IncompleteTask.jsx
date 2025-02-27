@@ -1,6 +1,11 @@
+import Card from "../grid/Card"
+
 const IncompleteTask = () =>{
     return(
-        <h2>Incomplete</h2>
+        <div>
+            <h1>Incomplete Tasks</h1>
+            <Card home={false}/>
+        </div>
     )
 }
 export default IncompleteTask

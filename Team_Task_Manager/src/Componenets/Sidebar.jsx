@@ -28,7 +28,7 @@ const Sidebar = () => {
         ))}
       </div>
       <div>
-        <button>Log Out</button>
+        <button className="login-btn">Log Out</button>
       </div>
     </>
   );

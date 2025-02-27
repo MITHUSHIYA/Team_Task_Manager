@@ -1,6 +1,11 @@
+import Card from "../grid/Card"
+
 const ImportantTask =()=>{
     return(
-        <h1>Important Task</h1>
+        <div>
+            <h1>Important Task</h1>
+            <Card home={false}/>
+        </div>
     )
 }
 export default ImportantTask

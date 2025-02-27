@@ -1,6 +1,11 @@
+import Card from "../grid/Card"
+
 const CompleteTask =() =>{
     return(
-        <h1>Complete</h1>
+        <div>
+            <h1>Completed Tasks</h1>
+            <Card home={false} />
+        </div>
     )
 }
 export default CompleteTask

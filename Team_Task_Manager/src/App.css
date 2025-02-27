@@ -1,6 +1,7 @@
 .Main_container{
     background-color: black;
     color: beige;
-    height: 100hv;
+    height: 100vh;
     padding: 2em;
+    position: relative;
 }

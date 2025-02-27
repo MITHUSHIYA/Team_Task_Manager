@@ -15,7 +15,7 @@
     font-size: 20px;
 }
 
-button{
+.login-btn{
     background-color: gray;
     width: 100%;
     padding: 2px;
