@@ -1,6 +1,7 @@
 import "./Home.css";
 import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
+import Card from "../grid/Card";
 const Home = () => {
   return (
     <div className="container">
@@ -8,8 +9,8 @@ const Home = () => {
         <Sidebar />
       </div>
       <div className="item_2">
-        home
         <Outlet></Outlet>
+        <Card></Card>
       </div>
     </div>
   );

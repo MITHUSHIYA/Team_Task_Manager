@@ -1,22 +1,28 @@
 import React from "react";
 import Home from "./Componenets/Home";
 import AllTask from "./Componenets/AllTask";
+import ImportantTask from "./Componenets/ImportantTask";
+import CompleteTask from "./Componenets/CompleteTask";
+import IncompleteTask from "./Componenets/IncompleteTask";
+import Signup from "./Pages/Signup";
 import "./App.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <>
-    <BrowserRouter>
-      <main className="Main_container">
-        
+      <BrowserRouter>
+        <main className="Main_container">
           <Routes>
             <Route path="/" element={<Home />}>
               <Route index element={<AllTask />}></Route>
+              <Route path="/importantTask" element={<ImportantTask />} />
+              <Route path="/completeTask" element={<CompleteTask />} />
+              <Route path="/incompleteTask" element={<IncompleteTask />} />
             </Route>
+            <Route path="/signup" element={<Signup />}></Route>
           </Routes>
-        
-      </main>
+        </main>
       </BrowserRouter>
     </>
   );
