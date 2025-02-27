@@ -1,4 +1,5 @@
 import "./Home.css";
+import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 const Home = () => {
   return (
@@ -6,7 +7,10 @@ const Home = () => {
       <div className="item_1">
         <Sidebar />
       </div>
-      <div className="item_2">home</div>
+      <div className="item_2">
+        home
+        <Outlet></Outlet>
+      </div>
     </div>
   );
 };
