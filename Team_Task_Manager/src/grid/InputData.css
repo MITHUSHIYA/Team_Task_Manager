@@ -25,6 +25,7 @@
   padding: 15px;
   border-radius: 10px;
   margin: 5px;
+  position: relative;
 }
 
 .input {
@@ -44,7 +45,10 @@
   font-size: medium;
 }
 
-.exit {
-  display: flex;
-  justify-content: end;
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
 }

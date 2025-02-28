@@ -2,6 +2,7 @@ const express = require("express");
 const mdb = require("mongoose");
 const dotenv = require("dotenv");
 const Signup = require("./models/signupSchema");
+const addDetails = require("./models/addDetailsScheme");
 const bcrypt = require("bcrypt");
 const cors = require("cors");
 
@@ -76,6 +77,23 @@ app.post("/login", async (req, res) => {
   } catch (error) {
     console.log("login error");
     res.status(400).json({ message: "Login Error", isLoggedIn: false });
+  }
+});
+
+app.post("/addDetails", async (req, res) => {
+  try {
+    const { title, desc } = req.body;
+    const newDetails = new addDetails({
+      title: title,
+      desc: desc,
+    });
+    console.log(req.body);
+    newDetails.save();
+    console.log("Successfully Added");
+    res.status(201).json({ message: "Insertion Successful", isAdded: true });
+  } catch (error) {
+    console.log(error);
+    res.status(201).json({ message: "Insertion Unsuccessful", isAdded: false });
   }
 });
 
