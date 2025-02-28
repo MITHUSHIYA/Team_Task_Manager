@@ -50,12 +50,6 @@ app.post("/signup", async (req, res) => {
   }
 });
 
-app.get("/getsignupdetails", (req, res) => {
-  const signup = Signup.find();
-  console.log(signup);
-  res.send("Signup details fetched");
-});
-
 app.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;

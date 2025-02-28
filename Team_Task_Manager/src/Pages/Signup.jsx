@@ -13,7 +13,7 @@ const Signup = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const req = await axios.post("http://localhost:3003/signup", {
+    const req = await axios.post("https://team-task-manager-iyoo.onrender.com/signup", {
       Name: Name,
       phoneNumber: phoneNumber,
       email: email,
@@ -30,52 +30,65 @@ const Signup = () => {
   };
 
   return (
-    <div className="container">
-      <h2>Signup</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          value={Name}
-          onChange={(e) => setName(e.target.value)}
-          type="text"
-          id="name"
-          placeholder="Name"
-          required
-        />{" "}
-        <br />
-        <input
-          value={phoneNumber}
-          onChange={(e) => setPN(e.target.value)}
-          type="tel"
-          id="phNo"
-          placeholder="Phone Number"
-        />{" "}
-        <br />
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="mail"
-          id="email"
-          placeholder="Email id"
-          required
-        />{" "}
-        <br />
-        <input
-          value={password}
-          onChange={(e) => setPass(e.target.value)}
-          type="text"
-          id="password"
-          placeholder="Password"
-          required
-        />
-        <br />
-        <button type="submit">Submit</button>
-      </form>
-      <p>
-        Already Have an Account ?
-        <button>
-          <Link to="/login">Login</Link>
-        </button>
-      </p>
+    <div
+      style={{
+        justifyContent: "center",
+        alignItems: "center",
+        alignContent: "center",
+        display: "flex",
+      }}
+    >
+      <div className="box">
+        <h2>Signup</h2>
+        <form onSubmit={handleSubmit}>
+          <input
+            value={Name}
+            onChange={(e) => setName(e.target.value)}
+            type="text"
+            id="name"
+            placeholder="Name"
+            required
+          />{" "}
+          <br />
+          <input
+            value={phoneNumber}
+            onChange={(e) => setPN(e.target.value)}
+            type="tel"
+            id="phNo"
+            placeholder="Phone Number"
+          />{" "}
+          <br />
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="mail"
+            id="email"
+            placeholder="Email id"
+            required
+          />{" "}
+          <br />
+          <input
+            value={password}
+            onChange={(e) => setPass(e.target.value)}
+            type="text"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <br />
+          <button type="submit" className="accept">
+            Submit
+          </button>
+        </form>
+        <p>
+          Already Have an Account ?
+          <button className="account">
+            <Link to="/login" className="link">
+              Login
+            </Link>
+          </button>
+        </p>
+      </div>
     </div>
   );
 };
