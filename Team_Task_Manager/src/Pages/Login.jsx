@@ -1,6 +1,8 @@
+import "./Signup.css"
+
 const Login = () => {
   return (
-    <div>
+    <div className="container">
       <h2>Login</h2>
       <form>
         <input type="email" id="email" placeholder="Email id" /> <br />
