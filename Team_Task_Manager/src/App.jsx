@@ -6,6 +6,7 @@ import CompleteTask from "./Componenets/CompleteTask";
 import IncompleteTask from "./Componenets/IncompleteTask";
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
+import Welcome from "./Pages/Welcome";
 import "./App.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
@@ -15,6 +16,7 @@ function App() {
       <BrowserRouter>
         <main className="Main_container">
           <Routes>
+            <Route path="/welcome" element={<Welcome />}></Route>
             <Route path="/" element={<Home />}>
               <Route index element={<AllTask />}></Route>
               <Route path="/importantTask" element={<ImportantTask />} />
