@@ -1,11 +1,24 @@
 const mdb = require("mongoose");
 
 const signupSchema = mdb.Schema({
-  Name: String,
-  email: String,
-  password: String,
-  phoneNumber: Number,
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  tasks: [{
+    type: mdb.Types.ObjectId,
+    ref: "addDetails",
+  }],
 });
 
 const signup_scheme = mdb.model("signup", signupSchema);
-module.exports = signup_scheme
+module.exports = signup_scheme;
