@@ -7,16 +7,34 @@ const InputData = ({ InputDiv, setInputdiv }) => {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
 
+  const username = localStorage.getItem("username");
   const handleInsertion = async (event) => {
     event.preventDefault();
-    const req = await axios.post("http://localhost:3003/addDetails", {
-      title: title,
-      desc: desc,
-    });
-    const msg = req.data.message;
-    const isAdded = req.data.isAdded;
+    if (!username) {
+      alert("User not logged in. Please log in to add tasks.");
+      return;
+    }
+    try {
+      const req = await axios.post("http://localhost:3003/addDetails", {
+        title: title,
+        desc: desc,
+        username: username,
+      });
+      const msg = req.data.message;
+      const isAdded = req.data.isAdded;
+      if (req.data.isAdded) {
+        alert(req.data.message);
+        setTitle("");
+        setDesc("");
+      } else {
+        alert("Failed to add task.");
+      }
 
-    alert(msg);
+      alert(msg);
+    } catch (error) {
+      console.error("Error adding task:", error);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (

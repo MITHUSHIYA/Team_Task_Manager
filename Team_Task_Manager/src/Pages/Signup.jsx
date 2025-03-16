@@ -22,6 +22,7 @@ const Signup = () => {
     const message = req.data.message;
     const isSignup = req.data.isSignup;
     if (isSignup) {
+      localStorage.setItem("username", Name);
       alert(message);
       navigate("/");
     } else {

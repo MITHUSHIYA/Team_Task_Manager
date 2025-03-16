@@ -6,18 +6,19 @@ import axios from "axios";
 const Login = () => {
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPass] = useState("");
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    const req = await axios.post("https://team-task-manager-iyoo.onrender.com/login", {
-      email: email,
+    const req = await axios.post("http://localhost:3003/login", {
+      username: username,
       password: password,
     });
     const message = req.data.message;
     const isLoggedIn = req.data.isLoggedIn;
     if (isLoggedIn) {
+      localStorage.setItem("username", username);
       alert(message);
       navigate("/");
     } else {
@@ -37,10 +38,10 @@ const Login = () => {
         <h2>Login</h2>
         <form onSubmit={handleLogin}>
           <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            placeholder="Email id"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            type="text"
+            placeholder="username"
           />
           <br />
           <input
