@@ -14,7 +14,7 @@ const Signup = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const req = await axios.post("https://team-task-manager-iyoo.onrender.com/signup", {
-      Name: Name,
+      username: Name,
       phoneNumber: phoneNumber,
       email: email,
       password: password,
