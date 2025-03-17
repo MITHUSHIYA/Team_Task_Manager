@@ -15,7 +15,7 @@ const InputData = ({ InputDiv, setInputdiv }) => {
       return;
     }
     try {
-      const req = await axios.post("http://localhost:3003/addDetails", {
+      const req = await axios.post("https://team-task-manager-iyoo.onrender.com/addDetails", {
         title: title,
         desc: desc,
         username: username,

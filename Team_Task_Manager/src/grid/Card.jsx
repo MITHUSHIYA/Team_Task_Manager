@@ -19,7 +19,7 @@ const Card = ({ home, setInputdiv,showImportantOnly=false, showCompOnly=false, s
           return;
         }
 
-        const response = await axios.get("http://localhost:3003/getTask", {
+        const response = await axios.get("https://team-task-manager-iyoo.onrender.com/getTask", {
           params: { username },
         });
         let fetchedTasks = response.data.tasks;
@@ -49,7 +49,7 @@ const Card = ({ home, setInputdiv,showImportantOnly=false, showCompOnly=false, s
       }
 
       const response = await axios.delete(
-        `http://localhost:3003/deleteTask/${taskId}?username=${username}`
+        `https://team-task-manager-iyoo.onrender.com/deleteTask/${taskId}?username=${username}`
       );
 
       if (response.status === 200) {
@@ -66,7 +66,7 @@ const Card = ({ home, setInputdiv,showImportantOnly=false, showCompOnly=false, s
 
   const toggleComplete = async (taskId) => {
     try {
-      const response = await axios.put(`http://localhost:3003/toggleComplete/${taskId}`);
+      const response = await axios.put(`https://team-task-manager-iyoo.onrender.com/toggleComplete/${taskId}`);
       if (response.status === 200) {
         setTasks((prevTasks) =>
           prevTasks.map((task) =>
@@ -82,7 +82,7 @@ const Card = ({ home, setInputdiv,showImportantOnly=false, showCompOnly=false, s
 
   const toggleImportant = async (taskId) => {
     try {
-      const response = await axios.put(`http://localhost:3003/toggleImportant/${taskId}`);
+      const response = await axios.put(`https://team-task-manager-iyoo.onrender.com/toggleImportant/${taskId}`);
       if (response.status === 200) {
         setTasks((prevTasks) =>
           prevTasks.map((task) =>
