@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt");
 const cors = require("cors");
 
 const app = express();
-app.use(cors({ origin: "https://team-task-manager-woad.vercel.app/", credentials: true }));
+app.use(cors());
 app.use(express.json());
 
 const PORT = 3003;
