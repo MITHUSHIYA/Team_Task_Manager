@@ -6,8 +6,9 @@ import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { IoMdAddCircle } from "react-icons/io";
 
-const Card = ({ home, setInputdiv }) => {
+const Card = ({ home, setInputdiv,showImportantOnly=false, showCompOnly=false, showInCompOnly=false}) => {
   const [tasks, setTasks] = useState([]);
+  
   const username = localStorage.getItem("username") || "";
 
   useEffect(() => {
@@ -21,8 +22,17 @@ const Card = ({ home, setInputdiv }) => {
         const response = await axios.get("http://localhost:3003/getTask", {
           params: { username },
         });
-
-        setTasks(response.data.tasks);
+        let fetchedTasks = response.data.tasks;
+        if (showImportantOnly) {
+          fetchedTasks = fetchedTasks.filter(task => task.important);
+        }
+        if (showCompOnly) {
+          fetchedTasks = fetchedTasks.filter(task => task.complete);
+        }
+        if (showInCompOnly) {
+          fetchedTasks = fetchedTasks.filter(task => !task.complete);
+        }
+        setTasks(fetchedTasks);
       } catch (error) {
         console.error("Error fetching tasks:", error);
       }

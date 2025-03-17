@@ -16,7 +16,7 @@ const Sidebar = () => {
   return (
     <>
       <div>
-        <h2 className="items_1">Team Task Manager</h2>
+        <h2 className="items_1">Team Manager</h2>
         <h4 className="items_2">{username}</h4>
         <hr />
       </div>

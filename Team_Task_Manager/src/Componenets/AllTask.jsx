@@ -23,7 +23,7 @@ const AllTask = () => {
             <IoMdAddCircle />
           </button>
         </div>
-        <Card home={true} setInputdiv={setInputdiv}/>
+        <Card home={true} setInputdiv={setInputdiv} showImportantOnly={false} showCompOnly={false} showInCompOnly={false}/>
       </div>
       <InputData InputDiv={InputDiv} setInputdiv={setInputdiv}/>
     </>

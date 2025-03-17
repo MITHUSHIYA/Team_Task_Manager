@@ -4,7 +4,7 @@ const ImportantTask =()=>{
     return(
         <div>
             <h1>Important Task</h1>
-            <Card home={false}/>
+            <Card home={false} showImportantOnly={true}/>
         </div>
     )
 }
