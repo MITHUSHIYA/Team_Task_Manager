@@ -39,10 +39,10 @@ app.post("/signup", async (req, res) => {
     const newSignup = new Signup({ username, phoneNumber, email, password: hashedPassword });
 
     await newSignup.save();
-    res.status(201).json({ message: "Signup Successful" });
+    res.status(201).json({ message: "Signup Successful", isSignup:true });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: "Signup Unsuccessful" });
+    res.status(500).json({ message: "Signup Unsuccessful", isSignup:false });
   }
 });
 
