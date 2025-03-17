@@ -22,13 +22,11 @@ const InputData = ({ InputDiv, setInputdiv }) => {
       });
       const msg = req.data.message;
       const isAdded = req.data.isAdded;
-      if (req.data.isAdded) {
+      if (isAdded) {
         alert(req.data.message);
         setTitle("");
         setDesc("");
-      } else {
-        alert("Failed to add task.");
-      }
+      } 
 
       alert(msg);
     } catch (error) {

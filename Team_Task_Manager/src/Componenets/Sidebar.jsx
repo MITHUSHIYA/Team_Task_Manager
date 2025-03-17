@@ -12,11 +12,12 @@ const Sidebar = () => {
     { title: "Comleted Tasks", icon: <IoCheckmarkDoneSharp />, link:"/completeTask" },
     { title: "Incompleted Tasks", icon: <FaRegTimesCircle />, link:"/incompleteTask" },
   ];
+  const username = localStorage.getItem("username");
   return (
     <>
       <div>
-        <h2 className="items_1"> Team Task Manager</h2>
-        <h4 className="items_2">abc@gmail.com</h4>
+        <h2 className="items_1">Team Task Manager</h2>
+        <h4 className="items_2">{username}</h4>
         <hr />
       </div>
       <div>
@@ -28,7 +29,7 @@ const Sidebar = () => {
         ))}
       </div>
       <div>
-        <button className="login-btn"><Link to='/login' className="link">Log Out</Link></button>
+        <button className="login-btn"><Link to='/welcome' className="link">Log Out</Link></button>
       </div>
     </>
   );
