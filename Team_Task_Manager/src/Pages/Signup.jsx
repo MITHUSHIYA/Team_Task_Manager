@@ -49,7 +49,7 @@ const Signup = () => {
             id="name"
             placeholder="Name"
             required
-          />{" "}
+          />
           <br />
           <input
             value={phoneNumber}
@@ -57,7 +57,7 @@ const Signup = () => {
             type="tel"
             id="phNo"
             placeholder="Phone Number"
-          />{" "}
+          />
           <br />
           <input
             value={email}
@@ -66,7 +66,7 @@ const Signup = () => {
             id="email"
             placeholder="Email id"
             required
-          />{" "}
+          />
           <br />
           <input
             value={password}
