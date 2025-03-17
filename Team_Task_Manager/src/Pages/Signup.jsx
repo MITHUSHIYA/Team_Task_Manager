@@ -6,7 +6,7 @@ import axios from "axios";
 const Signup = () => {
   const navigate = useNavigate();
 
-  const [Name, setName] = useState("");
+  const [username, setName] = useState("");
   const [phoneNumber, setPN] = useState(0);
   const [email, setEmail] = useState("");
   const [password, setPass] = useState("");
@@ -14,15 +14,15 @@ const Signup = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const req = await axios.post("https://team-task-manager-iyoo.onrender.com/signup", {
-      username: Name,
-      phoneNumber: phoneNumber,
+      username: username,
+      phoneNumber: Number(phoneNumber),
       email: email,
       password: password,
     });
     const message = req.data.message;
     const isSignup = req.data.isSignup;
     if (isSignup) {
-      localStorage.setItem("username", Name);
+      localStorage.setItem("username", username);
       alert(message);
       navigate("/");
     } else {
@@ -43,11 +43,11 @@ const Signup = () => {
         <h2>Signup</h2>
         <form onSubmit={handleSubmit}>
           <input
-            value={Name}
+            value={username}
             onChange={(e) => setName(e.target.value)}
             type="text"
-            id="name"
-            placeholder="Name"
+            id="username"
+            placeholder="username"
             required
           />
           <br />
